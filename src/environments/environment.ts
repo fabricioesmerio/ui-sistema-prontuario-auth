@@ -5,7 +5,7 @@
 export const environment = {
     production: false,
     host: 'http://192.168.0.105:3000'
-    // host: 'http://192.168.0.109:3000'
+    // host: 'http://devfabricio.tk:3000/'
 };
 
 /*

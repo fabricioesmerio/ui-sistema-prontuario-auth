@@ -20,7 +20,6 @@ export class AuthenticaService {
     ) { }
 
     authenticaMed(authData: MedModel): Promise<Response> {
-        console.log('ENV ::', this.env)
         return this.http.post<Response>(this.env.host + '/api/authenticate', authData).toPromise()
     }
 
