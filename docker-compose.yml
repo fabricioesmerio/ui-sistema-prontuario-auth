@@ -1,9 +1,7 @@
 version: '2.1'
 services:
-  ui-auth:
-    image: ui-auth
+  auth-laudos:
+    image: auth-laudos
     build: .
-    environment:
-      NODE_ENV: production
     ports:
       - 8081:80 
