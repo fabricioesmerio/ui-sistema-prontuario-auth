@@ -20,11 +20,11 @@ export class AuthenticaService {
     ) { }
 
     authenticaMed(authData: MedModel): Promise<Response> {
-        return this.http.post<Response>(this.env.host + '/api/authenticate', authData).toPromise()
+        return this.http.post<Response>(this.env.host + 'api/authenticate', authData).toPromise()
     }
 
     authenticaPat(pathData: PatModel): Promise<Response> {
         Object.keys(pathData).forEach(item => pathData[item] = parseInt(pathData[item]))
-        return this.http.post<Response>(this.env.host + '/api/patients/authenticate', pathData).toPromise()
+        return this.http.post<Response>(this.env.host + 'api/patients/authenticate', pathData).toPromise()
     }
 }
