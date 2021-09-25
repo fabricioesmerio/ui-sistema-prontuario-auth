@@ -2,7 +2,7 @@ FROM node:latest as angular
 ENV NODE_ENV production
 WORKDIR /app
 COPY package.json /app
-RUN npm install --silent
+RUN npm install
 COPY . .
 RUN npm run build
 
