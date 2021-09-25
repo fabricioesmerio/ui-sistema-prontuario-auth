@@ -1,0 +1,6 @@
+**/.vscode
+**/.git
+**/dist
+**/e2e
+**/node_modules
+README.md
