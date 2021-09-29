@@ -1,4 +1,5 @@
 import { AfterViewInit, Component, ElementRef, Renderer2, ViewChild } from '@angular/core';
+import { Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { AuthenticaService } from './authenticate.service';
 
@@ -31,7 +32,7 @@ export class AppComponent implements AfterViewInit {
     constructor(
         private render: Renderer2,
         private toastr: ToastrService,
-        private authService: AuthenticaService
+        private authService: AuthenticaService,
     ) { }
 
 
@@ -71,12 +72,13 @@ export class AppComponent implements AfterViewInit {
                         this.toastr.success(result.message, 'Sucesso!');
                         localStorage.setItem('tk', result.token)
                         localStorage.setItem('ty', mode == 'patient' ? 'P' : 'M')
+                        window.location.href = 'http://devfabricio.tk/app'
                     }
     
                 console.log('authenticate :: result ', result);
             } catch (err) {
-                console.error(err.error.message)
-                this.toastr.error(err.error.message, 'Erro!')
+                console.error(err)
+                this.toastr.error(err, 'Erro!')
             } finally {
                 this.loading = false
             }
