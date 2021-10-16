@@ -1,4 +1,4 @@
 export const environment = {
   production: true,
-  host: 'http://devfabricio.tk/'
+  host: 'https://devfabricio.tk/'
 };
